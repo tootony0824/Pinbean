@@ -1,0 +1,29 @@
+{
+  "name": "cartoon-palette-level-vote",
+  "image": {
+    "width": 4,
+    "height": 1,
+    "rgba": [
+      220, 220, 220, 255,
+      0, 0, 0, 255,
+      10, 10, 10, 255,
+      20, 20, 20, 255
+    ]
+  },
+  "config": {
+    "mode": "cartoon",
+    "targetGrid": { "axis": "width", "size": 1 },
+    "sampling": { "scale": 4 },
+    "alphaThreshold": 128,
+    "similarityMerge": { "enabled": false, "threshold": 48 }
+  },
+  "expected": {
+    "width": 1,
+    "height": 1,
+    "cells": [1],
+    "total": 1,
+    "colorCount": 1,
+    "paletteTable": ["", "fixture-black"],
+    "gridHash": "518f6f82"
+  }
+}

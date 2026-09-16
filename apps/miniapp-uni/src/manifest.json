@@ -1,0 +1,24 @@
+{
+  "name": "PinBean 拼豆助手",
+  "appid": "__UNI__PINBEAN",
+  "description": "将图片转换为可编辑、可导出的拼豆图纸",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "h5": {
+    "title": "PinBean 拼豆助手"
+  },
+  "mp-weixin": {
+    "appid": "wxe61525c07016013c",
+    "setting": {
+      "urlCheck": false,
+      "es6": false,
+      "minified": false
+    },
+    "usingComponents": true
+  },
+  "uniStatistics": {
+    "enable": false
+  },
+  "vueVersion": "3"
+}

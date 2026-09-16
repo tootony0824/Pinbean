@@ -1,0 +1,8 @@
+- [x] The `✨ AI 一键抠图` button and related styles are completely removed from `index.wxml` and `index.wxss`.
+- [x] The `onRemoveBackground` and `_doBaiduMatting` functions are completely removed from `index.js`.
+- [x] A new file `miniapp/utils/imageProcessor.js` is created and contains the core image processing logic (`_pixelate`, color conversion, palette building, etc.).
+- [x] `index.js` imports and correctly uses the functions from `imageProcessor.js` without breaking the existing generation flow.
+- [x] A local edge detection/enhancement algorithm (e.g., Sobel) is implemented in `imageProcessor.js` and integrated into the pixelation process.
+- [x] A slider for adjusting the "Edge Strength" is added to `index.wxml` and its value controls the intensity of the edge enhancement algorithm.
+- [x] The zoom functionality in Edit Mode (`[➖]` and `[➕]`) works correctly, allowing users to both zoom in and zoom out smoothly.
+- [x] The Edit Mode toolbar layout is optimized, ensuring tools (`pan`, `select`, `pen`, `eyedropper`) and actions (`undo`, `clear`, `delete`) are intuitively arranged.

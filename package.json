@@ -1,0 +1,33 @@
+{
+  "name": "pinbean-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=apps/web",
+    "build:web": "npm run build --workspace=apps/web",
+    "start:web": "npm run start --workspace=apps/web --",
+    "check:web": "npm run build:core && npm run build:palette && npm run check --workspace=apps/web",
+    "build:uni:h5": "npm run build:h5 --workspace=apps/miniapp-uni",
+    "build:uni:mp-weixin": "npm run build:mp-weixin --workspace=apps/miniapp-uni",
+    "build:core": "npm run build --workspace=packages/bead-core",
+    "build:palette": "npm run build --workspace=packages/palette-data",
+    "check:core": "npm run check --workspace=packages/bead-core",
+    "check:palette": "npm run build:core && npm run check --workspace=packages/palette-data",
+    "test:web": "npm run build:core && npm test --workspace=apps/web",
+    "check:uni": "npm run build:core && npm run build:palette && npm run check --workspace=apps/miniapp-uni",
+    "test:wechat:smoke": "node apps/miniapp-uni/scripts/wechatSmoke.mjs",
+    "test:uni": "npm test --workspace=apps/miniapp-uni",
+    "test:h5:smoke": "node apps/miniapp-uni/scripts/h5Smoke.mjs",
+    "test:h5:full": "node apps/miniapp-uni/scripts/h5SmokeFull.mjs",
+    "fixtures:update": "npm run build:core && npm run fixtures:update --workspace=apps/web",
+    "test": "npm test --workspace=packages/bead-core && npm run check:palette && npm run test:web && npm run test --workspace=apps/miniapp-uni --ignore-scripts",
+    "check": "npm run check:core && npm run check:palette && npm run check:web && npm run check:uni"
+  },
+  "devDependencies": {
+    "miniprogram-automator": "0.12.1"
+  }
+}

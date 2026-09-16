@@ -1,0 +1,16 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "PinBean 拼豆助手"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#F7F2EA",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "PinBean 拼豆助手",
+    "backgroundColor": "#F7F2EA"
+  }
+}

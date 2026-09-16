@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PinBean 功能逻辑图（Bug 与设计偏移标注）</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    margin: 0;
+    padding: 32px 24px 80px;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .subtitle { color: #64748b; font-size: 13px; margin-bottom: 20px; }
+  .legend {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 10px 16px; margin-bottom: 20px; font-size: 13px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .sw-bug { background: #f87171; }
+  .sw-drift { background: #fbbf24; }
+  .sw-ok { background: #e5e7eb; border: 1px solid #cbd5e1; }
+  .card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 16px 20px; margin-bottom: 20px;
+  }
+  .card h2 { font-size: 15px; margin: 0 0 12px; }
+  .issue-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .issue-table th, .issue-table td {
+    text-align: left; padding: 6px 10px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+  .issue-table th { color: #64748b; font-weight: 600; background: #f8fafc; }
+  .tag-bug { color: #b91c1c; font-weight: 700; }
+  .tag-drift { color: #92400e; font-weight: 700; }
+  .tag-ok { color: #047857; font-weight: 700; }
+  .mermaid { text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>PinBean 功能逻辑图</h1>
+<div class="subtitle">小程序 miniapp · 生成于代码审查后 · 主链路：上传 → 参数 → 生成 → 预览 → 编辑 / 导出 / 进度</div>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-swatch sw-bug"></span> ⚠️B = Bug（编号对应审查清单）</div>
+  <div class="legend-item"><span class="legend-swatch sw-drift"></span> ◾D = 与设计理念偏移（CLAUDE.md / 路线图 / 蓝图）</div>
+  <div class="legend-item"><span class="legend-swatch sw-ok"></span> ✅ = 与设计一致</div>
+</div>
+
+<div class="card">
+  <div class="mermaid">
+flowchart TD
+  classDef bug fill:#f87171,color:#fff,stroke:#991b1b
+  classDef drift fill:#fbbf24,stroke:#92400e
+  classDef ok fill:#e5e7eb,stroke:#6b7280
+
+  subgraph S0["入口与参数层"]
+    A["onLoad 恢复色板 / 历史索引"] --> B["onChooseImage 选择图片"]
+    B --> C1["色板 MARD<br/>◾D6 web 有 5 套色板, 小程序只剩 MARD"]
+    B --> C2["作品用途 挂件29 / 礼物50 / 照片58 / 大图75<br/>联动尺寸+风格 ◾D5 预设与 CLAUDE.md 的 28/38/48/58 不同"]
+    B --> C3["尺寸滑块 15-75<br/>⚠️B1 51-100 格下游被截断为 50"]
+    B --> C4["处理风格 卡通 / 写实<br/>◾D1 文档说卡通自动开边缘检测, 实际 detectEdges 是空函数"]
+    B --> C5["预览模式 网格 / 纯净"]
+  end
+
+  subgraph S1["生成链路（制图层）"]
+    G["onGenerate 60s 倒计时超时保护"] --> G1["processCanvas 原图全尺寸<br/>⚠️B5 4000px+ 超 canvas 上限直接失败<br/>Lanczos 降采样写好了但从未调用"]
+    G1 --> G2["wx.canvasGetImageData"]
+    G2 --> G3["逐格代表色 dominant / average"]
+    G3 --> G4["RGB 欧氏距离 → 最近色号<br/>⚠️B12 mardPalette120.json 缺失<br/>每次 require 失败回退 COLOR_MAPPING"]
+    G4 --> G5["孤立噪点去除"]
+    G5 --> G6["全局相似色合并 阈值30<br/>低频并入高频 ✅ 与设计一致"]
+    G6 --> G7["统计 list/total<br/>⚠️B3 白色 #FFFFFF/T01 被 filter 丢弃<br/>清单缺白豆, 总数偏小, 与 web 不一致"]
+    G7 --> G8["+8% 备料 reserve ✅"]
+    G8 --> G9["制作评估 难度/耗时/分板/顺序 ✅<br/>制作层已落地"]
+    G9 --> G10["按签名 key 恢复历史进度<br/>⚠️B6 编辑后 key 重算, 历史出现重复记录"]
+    G10 --> G11["◾D2 仍是 {key,color}+key==='?'<br/>roadmap Milestone3 isExternal 迁移未开始"]
+  end
+
+  subgraph S2["预览层"]
+    P["_drawGrid<br/>⚠️B2 gridCanvas 无 width/height 属性<br/>缓冲固定 300x150, 显示非等比拉伸变扁"]
+    P --> P1["全屏模式"]
+    P --> P2["色块点击高亮 onHighlightColor<br/>⚠️B4 状态泄漏: ① 重新生成不重置 → 新图带旧高亮<br/>② 高亮时导出 → 图纸颜色被画成 20% 透明"]
+  end
+
+  subgraph S3["编辑模式"]
+    E["onToggleEditMode 构建带优先级色板"] --> E1{"工具切换"}
+    E1 -->|pan| E2["scroll-view 滚动"]
+    E1 -->|select| E3["点选 / 滑选<br/>⚠️B10 zoom +/- 按钮空操作, zoomScale 恒 1"]
+    E3 --> E4["清空 / 撤销 / 删除选中"]
+    E3 --> E5["调色板替换 选中格→目标色"]
+    E5 --> E6["无选中+有高亮 → 整图全局替换 ✅"]
+    E1 -->|pen| E7["连续涂色 touchstart 存一次 history"]
+    E1 -->|eyedropper| E8["吸管 → 自动切画笔"]
+    E --> E9["去背景 flood fill<br/>⚠️B11 未识别到背景时已先 push history, 白撤销一次"]
+    E3 & E5 & E7 & E9 --> E10["recalculateStats 重算评估/分板/存储 ✅<br/>编辑后自动刷新"]
+  end
+
+  subgraph S4["导出层"]
+    X1["保存图纸 纯网格+坐标"] --> XC["统一走 exportCanvas<br/>⚠️B2 同样无 width/height 属性<br/>导出缓冲 300x150, 大图只有左上角内容"]
+    X2["色卡图纸 网格+坐标+色号+图例"] --> XC
+    X3["分板图纸 29x29 逐板 全局坐标 ✅"] --> XC
+    X4["分板合集 多板缩略总览 ✅"] --> XC
+    X5["只存未完成分板 ✅ 配合进度"] --> XC
+    X6["备料清单图 ✅"] --> XC
+    X7["发布封面 3:4 1080x1440 ✅"] --> XC
+    XC --> XS["相册权限 → 保存 ✅"]
+  end
+
+  subgraph S5["进度与复制层（制作/发布）"]
+    M1["色号勾选完成 ✅"] --> MS["progressSummary 按颗数算百分比 ✅"]
+    M2["分板勾选完成 ✅"] --> MS
+    MS --> M3["自动写 storage + 同步历史记录 ✅"]
+    M3 --> M4["历史列表 查看/复制/删除 ✅"]
+    M3 --> M5["命名作品 ✅"]
+    M3 --> M6["发布复盘 赞/藏/评/转化 ✅"]
+    M3 --> M7["重置进度 ✅"]
+    M3 --> M8["复制: 发布文案3模板 / 发布包 / 分板 / 清单 / 进度 / 摘要 ✅<br/>发布层已落地"]
+  end
+
+  subgraph S6["代码级问题（不在功能流上）"]
+    X8["⚠️B7 onShare 死代码未绑定<br/>且逻辑半成品: 生成临时文件后提示长按保存, 页面无处可长按"]:::bug
+    X9["⚠️B8 pixelation.worker.js 41.8KB 零引用<br/>◾D3 Worker 启用 (P0 待办) 一直没做"]:::bug
+    X10["⚠️B9 shared/pixelationCore.ts 编译产物从未生成<br/>未接入运行时, 且统计行为与 imageProcessor.js 不一致"]:::bug
+    X11["⚠️B13/B14 miniapp 与根 project.config.json appid 不一致<br/>build.js 缺失, npm 脚本不可用"]:::bug
+    X12["◾D4 网格上限: CLAUDE.md 建议不超过 50<br/>实际滑块到 75, 51-75 触发截断"]:::drift
+    X13["✅ 拆分 index.js 为薄控制器 + modules 已完成"]:::ok
+  end
+
+  S0 --> S1 --> S2 --> S3
+  S2 --> S4
+  S2 --> S5
+  S3 --> S5
+  </div>
+</div>
+
+<div class="card">
+  <h2>问题对照清单（审查时发现，共 14 项）</h2>
+  <table class="issue-table">
+    <tr><th>编号</th><th>类型</th><th>位置</th><th>描述</th></tr>
+    <tr><td class="tag-bug">B1</td><td class="tag-bug">Bug</td><td>generate.js / index.js</td><td>尺寸 &gt;50 格时导出被截断成左上角 50×50，统计颗数与图纸不一致</td></tr>
+    <tr><td class="tag-bug">B2</td><td class="tag-bug">Bug</td><td>index.wxml</td><td>gridCanvas / overlayCanvas / exportCanvas 无 width/height 属性，缓冲固定 300×150，预览变形、导出损坏</td></tr>
+    <tr><td class="tag-bug">B3</td><td class="tag-bug">Bug</td><td>imageProcessor.js</td><td>白色 #FFFFFF（T01）被统计 filter 丢弃，备料清单缺白豆、总数偏小</td></tr>
+    <tr><td class="tag-bug">B4</td><td class="tag-bug">Bug</td><td>index.js / export.js</td><td>highlightColor 泄漏：重新生成不重置；高亮状态下导出颜色画成 20% 透明</td></tr>
+    <tr><td class="tag-bug">B5</td><td class="tag-bug">Bug</td><td>index.js onGenerate</td><td>processCanvas 用原图全尺寸，大图超 canvas 上限失败；_doLanczosResize 写了从未调用</td></tr>
+    <tr><td class="tag-bug">B6</td><td class="tag-bug">Bug</td><td>editing.js</td><td>编辑后 progressStorageKey 重算，历史记录出现同一作品重复条目</td></tr>
+    <tr><td class="tag-bug">B7</td><td class="tag-bug">Bug</td><td>index.js onShare</td><td>死代码未绑定；逻辑半成品（临时文件无处可长按保存）</td></tr>
+    <tr><td class="tag-bug">B8</td><td class="tag-bug">Bug</td><td>workers/</td><td>pixelation.worker.js 41.8KB 零引用（P0 待办未做）</td></tr>
+    <tr><td class="tag-bug">B9</td><td class="tag-bug">Bug</td><td>shared/pixelationCore</td><td>编译产物从未生成、未接入运行时，且统计行为与 imageProcessor.js 不一致</td></tr>
+    <tr><td class="tag-bug">B10</td><td class="tag-bug">Bug</td><td>index.wxml / index.js</td><td>zoom ➕➖ 按钮空操作，zoomScale 恒 1（假 UI）</td></tr>
+    <tr><td class="tag-bug">B11</td><td class="tag-bug">Bug</td><td>editing.js onRemoveBackground</td><td>未识别到背景时已先 push history，白撤销一次</td></tr>
+    <tr><td class="tag-bug">B12</td><td class="tag-bug">Bug</td><td>rgbCore.js</td><td>mardPalette120.json 不存在，每次 require 失败静默回退（与 120 色板计划脱节）</td></tr>
+    <tr><td class="tag-bug">B13</td><td class="tag-bug">Bug</td><td>project.config.json</td><td>miniapp 与根目录 appid 不一致（wxb74fed vs wxe61525）</td></tr>
+    <tr><td class="tag-bug">B14</td><td class="tag-bug">Bug</td><td>package.json</td><td>build.js 缺失，npm run build/preview/upload 不可用</td></tr>
+    <tr><td class="tag-drift">D1</td><td class="tag-drift">偏移</td><td>imageProcessor.js</td><td>文档称"卡通模式自动开启边缘检测"，实际 detectEdges/isEdgeCell 是空函数</td></tr>
+    <tr><td class="tag-drift">D2</td><td class="tag-drift">偏移</td><td>数据模型</td><td>roadmap Milestone3：isExternal 迁移未开始，仍是 {key,color}+key==='?'</td></tr>
+    <tr><td class="tag-drift">D3</td><td class="tag-drift">偏移</td><td>workers/</td><td>启用 Worker 是 P0 待办，一直没做（同 B8）</td></tr>
+    <tr><td class="tag-drift">D4</td><td class="tag-drift">偏移</td><td>尺寸上限</td><td>CLAUDE.md 建议网格不超过 50×50，实际滑块到 75 且 51-75 触发截断（同 B1）</td></tr>
+    <tr><td class="tag-drift">D5</td><td class="tag-drift">偏移</td><td>尺寸预设</td><td>CLAUDE.md 28/38/48/58 → 实际 29/50/58/75（以 29 标准板为基准，属合理演进）</td></tr>
+    <tr><td class="tag-drift">D6</td><td class="tag-drift">偏移</td><td>色板系统</td><td>web 有 5 套色板，小程序只剩 MARD（产品裁剪，需确认是否有意）</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>设计理念对照（结论）</h2>
+  <ul style="font-size: 13.5px; line-height: 1.9; margin: 0; padding-left: 20px;">
+    <li><b>制作层 + 发布层落地最完整</b>：评估、备料、分板、进度、历史、文案、封面全部 ✅，与蓝图"把用户带到买豆、分板、开拼、发布"的闭环意图一致。</li>
+    <li><b>偏移集中在中游制图层</b>：边缘检测被移除但文档未同步、isExternal 迁移未做、色板 5→1、网格上限 50→75 但下游未跟上——均为"代码先动、文档和下游没动"。</li>
+    <li><b>P0 三 bug（B1/B2/B3）落在生成→预览→导出咽喉段</b>：恰是"稳定产出可制作图纸"的核心承诺，现在这段最不稳。</li>
+  </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, theme: 'default', flowchart: { useMaxWidth: true } });</script>
+</body>
+</html>

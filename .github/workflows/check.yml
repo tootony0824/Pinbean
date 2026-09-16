@@ -1,0 +1,54 @@
+name: Workspace Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      CI: 'true'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      # Linux lzma requires ^22.20 / ^24.12 / >=25; also satisfies ESLint and Playwright.
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.13.0'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Set up npm
+        run: npm install --global npm@11.4.2
+      - name: Install workspace dependencies
+        run: npm ci
+      - name: Check shared packages and build Web, H5 and WeChat
+        run: npm run check
+      - name: Install locked Playwright Chromium
+        run: |
+          node node_modules/playwright-core/cli.js install --with-deps chromium
+          node --input-type=module -e 'import { appendFileSync } from "node:fs"; import { chromium } from "playwright-core"; appendFileSync(process.env.GITHUB_ENV, `CHROME_PATH=${chromium.executablePath()}\n`);'
+      - name: Full H5 smoke, both modes
+        timeout-minutes: 15
+        run: npm run test:h5:full
+        env:
+          PINBEAN_SMOKE_ARTIFACT_DIR: ${{ runner.temp }}/pinbean-h5-smoke
+      - name: Upload H5 smoke evidence
+        uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: h5-smoke
+          path: ${{ runner.temp }}/pinbean-h5-smoke
+          if-no-files-found: ignore
+          retention-days: 7

@@ -1,0 +1,2588 @@
+{
+  "node": "v24.13.0",
+  "platform": "win32",
+  "cpu": "AMD Ryzen 7 5700X 8-Core Processor             ",
+  "method": "Five fixed RGBA fixtures, two modes, width 50; threshold 0 for all variants; V2 baseline isolates sampling/mapping from legacy threshold merge. One warmup + five measured runs. All runs asserted deterministic. Source OKLab error and topology are descriptive, not semantic acceptance. No cleanup, no browser/device timing.",
+  "rows": [
+    {
+      "name": "line-art-dominant-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "c9640970",
+      "width": 50,
+      "height": 50,
+      "colors": 9,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06533576374482804,
+      "components": 271,
+      "isolated": 126,
+      "edges": 1498,
+      "medianMs": 10.397400000000061,
+      "maxMs": 19.169299999999907
+    },
+    {
+      "name": "line-art-dominant-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "28bcd980",
+      "width": 50,
+      "height": 50,
+      "colors": 9,
+      "changedFromV2": 242,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05534334240876096,
+      "components": 263,
+      "isolated": 122,
+      "edges": 1481,
+      "medianMs": 9.506999999999948,
+      "maxMs": 17.15599999999995
+    },
+    {
+      "name": "line-art-dominant-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "c279c61f",
+      "width": 50,
+      "height": 50,
+      "colors": 10,
+      "changedFromV2": 1041,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.053989888025989814,
+      "components": 329,
+      "isolated": 147,
+      "edges": 2147,
+      "medianMs": 11.157399999999939,
+      "maxMs": 24.518599999999992
+    },
+    {
+      "name": "line-art-dominant-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "c279c61f",
+      "width": 50,
+      "height": 50,
+      "colors": 10,
+      "changedFromV2": 1041,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.053989888025989814,
+      "components": 329,
+      "isolated": 147,
+      "edges": 2147,
+      "medianMs": 10.185100000000034,
+      "maxMs": 11.01010000000008
+    },
+    {
+      "name": "line-art-dominant-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "3667660a",
+      "width": 50,
+      "height": 50,
+      "colors": 8,
+      "changedFromV2": 1044,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05403409266568859,
+      "components": 191,
+      "isolated": 67,
+      "edges": 1835,
+      "medianMs": 10.603200000000015,
+      "maxMs": 29.453500000000076
+    },
+    {
+      "name": "line-art-dominant-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "c279c61f",
+      "width": 50,
+      "height": 50,
+      "colors": 10,
+      "changedFromV2": 1041,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.053989888025989814,
+      "components": 329,
+      "isolated": 147,
+      "edges": 2147,
+      "medianMs": 11.8121000000001,
+      "maxMs": 17.148699999999963
+    },
+    {
+      "name": "line-art-dominant-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "c279c61f",
+      "width": 50,
+      "height": 50,
+      "colors": 10,
+      "changedFromV2": 1041,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.053989888025989814,
+      "components": 329,
+      "isolated": 147,
+      "edges": 2147,
+      "medianMs": 13.444899999999961,
+      "maxMs": 17.406799999999976
+    },
+    {
+      "name": "line-art-average-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "2d4a10d1",
+      "width": 50,
+      "height": 50,
+      "colors": 24,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.056854369712104225,
+      "components": 621,
+      "isolated": 463,
+      "edges": 1993,
+      "medianMs": 6.4927000000000135,
+      "maxMs": 34.056299999999965
+    },
+    {
+      "name": "line-art-average-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "5d0b7e05",
+      "width": 50,
+      "height": 50,
+      "colors": 24,
+      "changedFromV2": 508,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.0530946363135527,
+      "components": 602,
+      "isolated": 442,
+      "edges": 1954,
+      "medianMs": 10.59010000000012,
+      "maxMs": 16.745400000000018
+    },
+    {
+      "name": "line-art-average-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "d89e781b",
+      "width": 50,
+      "height": 50,
+      "colors": 30,
+      "changedFromV2": 1199,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05265494157951622,
+      "components": 644,
+      "isolated": 468,
+      "edges": 2517,
+      "medianMs": 7.193399999999883,
+      "maxMs": 7.726700000000164
+    },
+    {
+      "name": "line-art-average-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "fb29727c",
+      "width": 50,
+      "height": 50,
+      "colors": 27,
+      "changedFromV2": 1246,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05360177758570275,
+      "components": 627,
+      "isolated": 442,
+      "edges": 2500,
+      "medianMs": 13.68249999999989,
+      "maxMs": 14.094499999999925
+    },
+    {
+      "name": "line-art-average-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "b603d3a5",
+      "width": 50,
+      "height": 50,
+      "colors": 8,
+      "changedFromV2": 2051,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05500722251965722,
+      "components": 287,
+      "isolated": 231,
+      "edges": 894,
+      "medianMs": 10.389099999999871,
+      "maxMs": 12.721099999999979
+    },
+    {
+      "name": "line-art-average-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "747a59b7",
+      "width": 50,
+      "height": 50,
+      "colors": 16,
+      "changedFromV2": 1401,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05280859742069881,
+      "components": 542,
+      "isolated": 383,
+      "edges": 2342,
+      "medianMs": 9.517100000000028,
+      "maxMs": 11.130999999999858
+    },
+    {
+      "name": "line-art-average-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "d89e781b",
+      "width": 50,
+      "height": 50,
+      "colors": 30,
+      "changedFromV2": 1199,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05265494157951622,
+      "components": 644,
+      "isolated": 468,
+      "edges": 2517,
+      "medianMs": 8.946299999999837,
+      "maxMs": 14.20679999999993
+    },
+    {
+      "name": "cartoon-dominant-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "9ea70df7",
+      "width": 50,
+      "height": 50,
+      "colors": 26,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06945691228208102,
+      "components": 79,
+      "isolated": 32,
+      "edges": 754,
+      "medianMs": 33.83320000000003,
+      "maxMs": 41.420500000000175
+    },
+    {
+      "name": "cartoon-dominant-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "d7604f1a",
+      "width": 50,
+      "height": 50,
+      "colors": 21,
+      "changedFromV2": 118,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06425058526492082,
+      "components": 68,
+      "isolated": 25,
+      "edges": 713,
+      "medianMs": 31.578300000000127,
+      "maxMs": 33.17689999999993
+    },
+    {
+      "name": "cartoon-dominant-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "b8621ff5",
+      "width": 50,
+      "height": 50,
+      "colors": 27,
+      "changedFromV2": 1109,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05885181154549387,
+      "components": 118,
+      "isolated": 56,
+      "edges": 958,
+      "medianMs": 42.108799999999974,
+      "maxMs": 46.558700000000044
+    },
+    {
+      "name": "cartoon-dominant-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "b8621ff5",
+      "width": 50,
+      "height": 50,
+      "colors": 27,
+      "changedFromV2": 1109,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05885181154549387,
+      "components": 118,
+      "isolated": 56,
+      "edges": 958,
+      "medianMs": 31.036799999999857,
+      "maxMs": 43.61400000000003
+    },
+    {
+      "name": "cartoon-dominant-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "44982d12",
+      "width": 50,
+      "height": 50,
+      "colors": 8,
+      "changedFromV2": 1429,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.0681662020499344,
+      "components": 40,
+      "isolated": 7,
+      "edges": 694,
+      "medianMs": 34.69930000000022,
+      "maxMs": 35.453599999999824
+    },
+    {
+      "name": "cartoon-dominant-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "a482e1f5",
+      "width": 50,
+      "height": 50,
+      "colors": 16,
+      "changedFromV2": 1119,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05889152596720923,
+      "components": 93,
+      "isolated": 36,
+      "edges": 915,
+      "medianMs": 36.188800000000356,
+      "maxMs": 44.36760000000004
+    },
+    {
+      "name": "cartoon-dominant-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "b8621ff5",
+      "width": 50,
+      "height": 50,
+      "colors": 27,
+      "changedFromV2": 1109,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05885181154549387,
+      "components": 118,
+      "isolated": 56,
+      "edges": 958,
+      "medianMs": 35.478799999999865,
+      "maxMs": 38.960099999999784
+    },
+    {
+      "name": "cartoon-average-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "e68a42c5",
+      "width": 50,
+      "height": 50,
+      "colors": 104,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.0666637505813118,
+      "components": 478,
+      "isolated": 409,
+      "edges": 1488,
+      "medianMs": 6.847000000000207,
+      "maxMs": 7.3310999999998785
+    },
+    {
+      "name": "cartoon-average-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "3e53283f",
+      "width": 50,
+      "height": 50,
+      "colors": 108,
+      "changedFromV2": 412,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06325652379544738,
+      "components": 471,
+      "isolated": 393,
+      "edges": 1487,
+      "medianMs": 10.35759999999982,
+      "maxMs": 11.624900000000252
+    },
+    {
+      "name": "cartoon-average-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "d5ac0327",
+      "width": 50,
+      "height": 50,
+      "colors": 105,
+      "changedFromV2": 1267,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06021507893587319,
+      "components": 476,
+      "isolated": 391,
+      "edges": 1604,
+      "medianMs": 13.68119999999999,
+      "maxMs": 15.055100000000039
+    },
+    {
+      "name": "cartoon-average-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "57191e3e",
+      "width": 50,
+      "height": 50,
+      "colors": 111,
+      "changedFromV2": 1299,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06109318754119833,
+      "components": 487,
+      "isolated": 404,
+      "edges": 1620,
+      "medianMs": 17.29449999999997,
+      "maxMs": 22.104299999999967
+    },
+    {
+      "name": "cartoon-average-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "416a8f47",
+      "width": 50,
+      "height": 50,
+      "colors": 8,
+      "changedFromV2": 1813,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.07520330363530675,
+      "components": 148,
+      "isolated": 96,
+      "edges": 879,
+      "medianMs": 13.159499999999753,
+      "maxMs": 15.084399999999732
+    },
+    {
+      "name": "cartoon-average-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "94611c81",
+      "width": 50,
+      "height": 50,
+      "colors": 16,
+      "changedFromV2": 1342,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06210536051381362,
+      "components": 307,
+      "isolated": 219,
+      "edges": 1316,
+      "medianMs": 13.286000000000058,
+      "maxMs": 14.535100000000057
+    },
+    {
+      "name": "cartoon-average-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "860e7066",
+      "width": 50,
+      "height": 50,
+      "colors": 32,
+      "changedFromV2": 1324,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.060665165107522165,
+      "components": 386,
+      "isolated": 300,
+      "edges": 1444,
+      "medianMs": 14.61279999999988,
+      "maxMs": 15.517699999999877
+    },
+    {
+      "name": "landscape-dominant-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "6fa2b7d1",
+      "width": 50,
+      "height": 50,
+      "colors": 49,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.0578006175581099,
+      "components": 286,
+      "isolated": 124,
+      "edges": 1669,
+      "medianMs": 56.31670000000031,
+      "maxMs": 59.526600000000144
+    },
+    {
+      "name": "landscape-dominant-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "c94d01d4",
+      "width": 50,
+      "height": 50,
+      "colors": 49,
+      "changedFromV2": 310,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05389433061740128,
+      "components": 273,
+      "isolated": 112,
+      "edges": 1654,
+      "medianMs": 53.6242000000002,
+      "maxMs": 58.832800000000134
+    },
+    {
+      "name": "landscape-dominant-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "cb302549",
+      "width": 50,
+      "height": 50,
+      "colors": 47,
+      "changedFromV2": 1106,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04655769382457435,
+      "components": 333,
+      "isolated": 165,
+      "edges": 1728,
+      "medianMs": 62.6282999999994,
+      "maxMs": 77.29119999999966
+    },
+    {
+      "name": "landscape-dominant-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "cb302549",
+      "width": 50,
+      "height": 50,
+      "colors": 47,
+      "changedFromV2": 1106,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04655769382457435,
+      "components": 333,
+      "isolated": 165,
+      "edges": 1728,
+      "medianMs": 66.73230000000058,
+      "maxMs": 70.27550000000065
+    },
+    {
+      "name": "landscape-dominant-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "9025e0e6",
+      "width": 50,
+      "height": 50,
+      "colors": 8,
+      "changedFromV2": 1736,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.056032856593291304,
+      "components": 114,
+      "isolated": 46,
+      "edges": 952,
+      "medianMs": 71.42839999999978,
+      "maxMs": 81.46550000000025
+    },
+    {
+      "name": "landscape-dominant-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "815c9b66",
+      "width": 50,
+      "height": 50,
+      "colors": 16,
+      "changedFromV2": 1364,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.049947016249224416,
+      "components": 237,
+      "isolated": 115,
+      "edges": 1422,
+      "medianMs": 75.36139999999978,
+      "maxMs": 88.57470000000012
+    },
+    {
+      "name": "landscape-dominant-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "326fd608",
+      "width": 50,
+      "height": 50,
+      "colors": 32,
+      "changedFromV2": 1087,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.047016884482434976,
+      "components": 299,
+      "isolated": 145,
+      "edges": 1650,
+      "medianMs": 79.43170000000009,
+      "maxMs": 87.76220000000012
+    },
+    {
+      "name": "landscape-average-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "ac098718",
+      "width": 50,
+      "height": 50,
+      "colors": 56,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.053086187519917685,
+      "components": 415,
+      "isolated": 225,
+      "edges": 1892,
+      "medianMs": 8.676699999999983,
+      "maxMs": 10.313099999999395
+    },
+    {
+      "name": "landscape-average-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "bb096701",
+      "width": 50,
+      "height": 50,
+      "colors": 54,
+      "changedFromV2": 427,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.051118182785881726,
+      "components": 409,
+      "isolated": 219,
+      "edges": 1891,
+      "medianMs": 9.671000000000276,
+      "maxMs": 13.01969999999983
+    },
+    {
+      "name": "landscape-average-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "478dc4a7",
+      "width": 50,
+      "height": 50,
+      "colors": 53,
+      "changedFromV2": 1139,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04531162809939663,
+      "components": 465,
+      "isolated": 278,
+      "edges": 1973,
+      "medianMs": 12.278000000000247,
+      "maxMs": 13.04110000000037
+    },
+    {
+      "name": "landscape-average-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "eca815ad",
+      "width": 50,
+      "height": 50,
+      "colors": 52,
+      "changedFromV2": 1145,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04591634964842434,
+      "components": 470,
+      "isolated": 277,
+      "edges": 2001,
+      "medianMs": 18.791400000000067,
+      "maxMs": 19.426499999999578
+    },
+    {
+      "name": "landscape-average-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "5a051968",
+      "width": 50,
+      "height": 50,
+      "colors": 8,
+      "changedFromV2": 1871,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.056412272183827605,
+      "components": 166,
+      "isolated": 71,
+      "edges": 1080,
+      "medianMs": 14.39759999999933,
+      "maxMs": 22.76389999999992
+    },
+    {
+      "name": "landscape-average-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "65a4995e",
+      "width": 50,
+      "height": 50,
+      "colors": 16,
+      "changedFromV2": 1438,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.0482739723455429,
+      "components": 314,
+      "isolated": 163,
+      "edges": 1586,
+      "medianMs": 13.832400000000234,
+      "maxMs": 16.731400000000576
+    },
+    {
+      "name": "landscape-average-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "5041ef2c",
+      "width": 50,
+      "height": 50,
+      "colors": 32,
+      "changedFromV2": 1161,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04556835340456123,
+      "components": 408,
+      "isolated": 236,
+      "edges": 1846,
+      "medianMs": 13.640800000000127,
+      "maxMs": 17.442299999999705
+    },
+    {
+      "name": "portrait-dominant-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "39d07ae3",
+      "width": 50,
+      "height": 50,
+      "colors": 51,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04396617317525147,
+      "components": 442,
+      "isolated": 282,
+      "edges": 1595,
+      "medianMs": 37.55709999999999,
+      "maxMs": 44.22410000000036
+    },
+    {
+      "name": "portrait-dominant-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "68b76b3d",
+      "width": 50,
+      "height": 50,
+      "colors": 52,
+      "changedFromV2": 273,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04020998078647838,
+      "components": 428,
+      "isolated": 273,
+      "edges": 1550,
+      "medianMs": 38.04110000000037,
+      "maxMs": 39.65470000000005
+    },
+    {
+      "name": "portrait-dominant-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "a77ad07b",
+      "width": 50,
+      "height": 50,
+      "colors": 52,
+      "changedFromV2": 542,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.03939954218746754,
+      "components": 445,
+      "isolated": 281,
+      "edges": 1652,
+      "medianMs": 59.470000000001164,
+      "maxMs": 84.62039999999979
+    },
+    {
+      "name": "portrait-dominant-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "a77ad07b",
+      "width": 50,
+      "height": 50,
+      "colors": 52,
+      "changedFromV2": 542,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.03939954218746754,
+      "components": 445,
+      "isolated": 281,
+      "edges": 1652,
+      "medianMs": 51.28429999999935,
+      "maxMs": 61.710399999999936
+    },
+    {
+      "name": "portrait-dominant-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "f393d613",
+      "width": 50,
+      "height": 50,
+      "colors": 8,
+      "changedFromV2": 821,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04306778154384118,
+      "components": 230,
+      "isolated": 121,
+      "edges": 1228,
+      "medianMs": 50.0708999999988,
+      "maxMs": 56.483799999999974
+    },
+    {
+      "name": "portrait-dominant-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "441aced5",
+      "width": 50,
+      "height": 50,
+      "colors": 16,
+      "changedFromV2": 672,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.04047534173132705,
+      "components": 313,
+      "isolated": 178,
+      "edges": 1375,
+      "medianMs": 52.557199999999284,
+      "maxMs": 55.875
+    },
+    {
+      "name": "portrait-dominant-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "551081b4",
+      "width": 50,
+      "height": 50,
+      "colors": 32,
+      "changedFromV2": 566,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.03955395760871759,
+      "components": 404,
+      "isolated": 246,
+      "edges": 1580,
+      "medianMs": 65.97959999999875,
+      "maxMs": 86.58729999999923
+    },
+    {
+      "name": "portrait-average-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "32b75917",
+      "width": 50,
+      "height": 50,
+      "colors": 55,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.040770784900005214,
+      "components": 569,
+      "isolated": 406,
+      "edges": 1793,
+      "medianMs": 8.148799999999028,
+      "maxMs": 9.12670000000071
+    },
+    {
+      "name": "portrait-average-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "e79120c8",
+      "width": 50,
+      "height": 50,
+      "colors": 57,
+      "changedFromV2": 366,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.03826328307377775,
+      "components": 586,
+      "isolated": 434,
+      "edges": 1788,
+      "medianMs": 11.462499999999636,
+      "maxMs": 12.476800000000367
+    },
+    {
+      "name": "portrait-average-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "46da4910",
+      "width": 50,
+      "height": 50,
+      "colors": 58,
+      "changedFromV2": 578,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.03754051296606802,
+      "components": 615,
+      "isolated": 449,
+      "edges": 1904,
+      "medianMs": 17.745100000000093,
+      "maxMs": 23.82840000000033
+    },
+    {
+      "name": "portrait-average-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "5ba280ea",
+      "width": 50,
+      "height": 50,
+      "colors": 55,
+      "changedFromV2": 587,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.03796312700998619,
+      "components": 610,
+      "isolated": 440,
+      "edges": 1906,
+      "medianMs": 24.160900000000765,
+      "maxMs": 27.49529999999868
+    },
+    {
+      "name": "portrait-average-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "165d504d",
+      "width": 50,
+      "height": 50,
+      "colors": 8,
+      "changedFromV2": 876,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.040937266219897836,
+      "components": 292,
+      "isolated": 171,
+      "edges": 1344,
+      "medianMs": 15.881100000000515,
+      "maxMs": 18.494000000000597
+    },
+    {
+      "name": "portrait-average-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "93ffd204",
+      "width": 50,
+      "height": 50,
+      "colors": 16,
+      "changedFromV2": 775,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.0391390370441512,
+      "components": 418,
+      "isolated": 286,
+      "edges": 1520,
+      "medianMs": 13.681799999998475,
+      "maxMs": 19.31580000000031
+    },
+    {
+      "name": "portrait-average-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "645c23bf",
+      "width": 50,
+      "height": 50,
+      "colors": 32,
+      "changedFromV2": 600,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.03770809142541917,
+      "components": 544,
+      "isolated": 381,
+      "edges": 1800,
+      "medianMs": 12.789600000000064,
+      "maxMs": 14.900099999998929
+    },
+    {
+      "name": "tall-pattern-dominant-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "ba82a590",
+      "width": 50,
+      "height": 59,
+      "colors": 68,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06374641168965368,
+      "components": 970,
+      "isolated": 618,
+      "edges": 3415,
+      "medianMs": 55.52520000000004,
+      "maxMs": 64.55140000000029
+    },
+    {
+      "name": "tall-pattern-dominant-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "590f2b1f",
+      "width": 50,
+      "height": 59,
+      "colors": 67,
+      "changedFromV2": 945,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05616436487358706,
+      "components": 847,
+      "isolated": 533,
+      "edges": 3158,
+      "medianMs": 50.0570000000007,
+      "maxMs": 53.17020000000048
+    },
+    {
+      "name": "tall-pattern-dominant-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "481b0e6b",
+      "width": 50,
+      "height": 59,
+      "colors": 67,
+      "changedFromV2": 1322,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05584517375244182,
+      "components": 1036,
+      "isolated": 675,
+      "edges": 3474,
+      "medianMs": 70.62950000000092,
+      "maxMs": 73.82160000000113
+    },
+    {
+      "name": "tall-pattern-dominant-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "481b0e6b",
+      "width": 50,
+      "height": 59,
+      "colors": 67,
+      "changedFromV2": 1322,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05584517375244182,
+      "components": 1036,
+      "isolated": 675,
+      "edges": 3474,
+      "medianMs": 67.0576000000001,
+      "maxMs": 73.63160000000062
+    },
+    {
+      "name": "tall-pattern-dominant-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "96e88033",
+      "width": 50,
+      "height": 59,
+      "colors": 8,
+      "changedFromV2": 1591,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.06042773935310549,
+      "components": 551,
+      "isolated": 283,
+      "edges": 2816,
+      "medianMs": 77.57920000000013,
+      "maxMs": 87.97730000000047
+    },
+    {
+      "name": "tall-pattern-dominant-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "0f681b2d",
+      "width": 50,
+      "height": 59,
+      "colors": 16,
+      "changedFromV2": 1527,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05787144104934916,
+      "components": 763,
+      "isolated": 447,
+      "edges": 3118,
+      "medianMs": 73.00240000000122,
+      "maxMs": 88.31000000000131
+    },
+    {
+      "name": "tall-pattern-dominant-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "cartoon",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "f4ffcf12",
+      "width": 50,
+      "height": 59,
+      "colors": 32,
+      "changedFromV2": 1434,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.056088246651242075,
+      "components": 909,
+      "isolated": 559,
+      "edges": 3310,
+      "medianMs": 80.50990000000093,
+      "maxMs": 92.03329999999914
+    },
+    {
+      "name": "tall-pattern-average-v2",
+      "config": {
+        "algorithmVersion": 2,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 4
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128
+      },
+      "hash": "1bf7aa55",
+      "width": 50,
+      "height": 59,
+      "colors": 60,
+      "changedFromV2": 0,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05721309582332627,
+      "components": 890,
+      "isolated": 547,
+      "edges": 3221,
+      "medianMs": 9.483500000000276,
+      "maxMs": 9.740700000000288
+    },
+    {
+      "name": "tall-pattern-average-v3-rgb-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "rgb"
+      },
+      "hash": "8de4147c",
+      "width": 50,
+      "height": 59,
+      "colors": 58,
+      "changedFromV2": 1014,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05338822308634949,
+      "components": 810,
+      "isolated": 507,
+      "edges": 3014,
+      "medianMs": 11.20719999999892,
+      "maxMs": 12.498700000000099
+    },
+    {
+      "name": "tall-pattern-average-v3-oklab-srgb",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab"
+      },
+      "hash": "7311db28",
+      "width": 50,
+      "height": 59,
+      "colors": 57,
+      "changedFromV2": 1361,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05295569825331314,
+      "components": 927,
+      "isolated": 565,
+      "edges": 3249,
+      "medianMs": 13.750700000000506,
+      "maxMs": 15.345400000000154
+    },
+    {
+      "name": "tall-pattern-average-v3-oklab-linear",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": true,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "linear",
+        "colorDistance": "oklab"
+      },
+      "hash": "ca1dbd69",
+      "width": 50,
+      "height": 59,
+      "colors": 59,
+      "changedFromV2": 1348,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05293051364285409,
+      "components": 913,
+      "isolated": 566,
+      "edges": 3211,
+      "medianMs": 19.809699999999793,
+      "maxMs": 21.665500000000975
+    },
+    {
+      "name": "tall-pattern-average-v3-oklab-k8",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 8
+      },
+      "hash": "cc5e5493",
+      "width": 50,
+      "height": 59,
+      "colors": 8,
+      "changedFromV2": 1845,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05752182920507673,
+      "components": 343,
+      "isolated": 173,
+      "edges": 1805,
+      "medianMs": 13.677600000000893,
+      "maxMs": 19.195200000000114
+    },
+    {
+      "name": "tall-pattern-average-v3-oklab-k16",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 16
+      },
+      "hash": "36f9b2a1",
+      "width": 50,
+      "height": 59,
+      "colors": 16,
+      "changedFromV2": 1410,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.05397913655113958,
+      "components": 656,
+      "isolated": 381,
+      "edges": 2761,
+      "medianMs": 15.931700000001001,
+      "maxMs": 18.709899999999834
+    },
+    {
+      "name": "tall-pattern-average-v3-oklab-k32",
+      "config": {
+        "algorithmVersion": 3,
+        "mode": "realistic",
+        "targetGrid": {
+          "axis": "width",
+          "size": 50
+        },
+        "sampling": {
+          "scale": 1,
+          "strategy": "area"
+        },
+        "paletteId": "pinbean:supplier:MARD",
+        "paletteVersion": "color-system-mapping-v1:selection-eba5d44b",
+        "similarityMerge": {
+          "enabled": false,
+          "threshold": 0
+        },
+        "alphaThreshold": 128,
+        "minimumCoverage": 0,
+        "averageColorSpace": "srgb",
+        "colorDistance": "oklab",
+        "maxColors": 32
+      },
+      "hash": "c6f9daaf",
+      "width": 50,
+      "height": 59,
+      "colors": 32,
+      "changedFromV2": 1414,
+      "coverageDifferenceFromV2": 0,
+      "sourceOklabError": 0.053062434770345154,
+      "components": 830,
+      "isolated": 503,
+      "edges": 3063,
+      "medianMs": 16.726599999999962,
+      "maxMs": 17.821599999999307
+    }
+  ]
+}

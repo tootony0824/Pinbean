@@ -1,0 +1,36 @@
+{
+  "name": "perler-beads",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.mts",
+    "check": "npm run typecheck && npm test && npm run build",
+    "fixtures:update": "tsx scripts/updateRealImageFixtures.mts"
+  },
+  "dependencies": {
+    "@pinbean/bead-core": "0.1.0",
+    "@pinbean/palette-data": "0.1.0",
+    "cropperjs": "^2.1.0",
+    "next": "15.3.6",
+    "react": "^19.0.0",
+    "react-cropper": "^2.3.3",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.6",
+    "tailwindcss": "^4",
+    "tsx": "4.23.12",
+    "typescript": "^5"
+  }
+}

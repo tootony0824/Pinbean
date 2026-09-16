@@ -1,0 +1,50 @@
+{
+  "name": "@pinbean/miniapp-uni",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:h5": "uni",
+    "dev:mp-weixin": "uni -p mp-weixin",
+    "build:h5": "uni build",
+    "build:mp-weixin": "uni build -p mp-weixin && node scripts/checkWechatArtifacts.mjs",
+    "pretest": "npm run build --workspace=@pinbean/bead-core && npm run build --workspace=@pinbean/palette-data",
+    "test": "tsx --test tests/*.test.mjs tests/*.test.mts",
+    "test:h5:smoke": "node scripts/h5Smoke.mjs",
+    "test:h5:batch": "node scripts/h5BatchImageRegression.mjs",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint src tests scripts vite.config.ts",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build:h5 && npm run build:mp-weixin"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-5020420260813003",
+    "@dcloudio/uni-components": "3.0.0-5020420260813003",
+    "@dcloudio/uni-h5": "3.0.0-5020420260813003",
+    "@dcloudio/uni-mp-weixin": "3.0.0-5020420260813003",
+    "@pinbean/bead-core": "0.1.0",
+    "@pinbean/palette-data": "0.1.0",
+    "pinia": "2.1.7",
+    "vue": "3.4.21",
+    "vue-i18n": "9.14.5"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "3.4.31",
+    "@dcloudio/uni-cli-shared": "3.0.0-5020420260813003",
+    "@dcloudio/uni-stacktracey": "3.0.0-5020420260813003",
+    "@dcloudio/vite-plugin-uni": "3.0.0-5020420260813003",
+    "@eslint/js": "10.0.1",
+    "@vue/runtime-core": "3.4.21",
+    "@vue/tsconfig": "0.1.3",
+    "eslint": "10.9.1",
+    "eslint-plugin-vue": "10.10.0",
+    "globals": "17.12.0",
+    "playwright-core": "1.62.1",
+    "pngjs": "7.0.0",
+    "tsx": "4.23.12",
+    "typescript": "4.9.5",
+    "typescript-eslint": "8.68.0",
+    "vite": "5.2.8",
+    "vue-eslint-parser": "10.4.1",
+    "vue-tsc": "1.8.27"
+  }
+}

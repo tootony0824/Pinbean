@@ -1,0 +1,10 @@
+{
+  "formatVersion": 1,
+  "fixtures": [
+    { "name": "line-art", "width": 192, "height": 192 },
+    { "name": "cartoon", "width": 192, "height": 192 },
+    { "name": "landscape", "width": 192, "height": 192 },
+    { "name": "portrait", "width": 192, "height": 192 },
+    { "name": "tall-pattern", "width": 164, "height": 192 }
+  ]
+}
