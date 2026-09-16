@@ -16,7 +16,7 @@
     "@pinbean/bead-core": "0.1.0",
     "@pinbean/palette-data": "0.1.0",
     "cropperjs": "^2.1.0",
-    "next": "15.3.6",
+    "next": "15.5.24",
     "react": "^19.0.0",
     "react-cropper": "^2.3.3",
     "react-dom": "^19.0.0"
